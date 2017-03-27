@@ -53,13 +53,20 @@ app.get('/about',(req,res) => {
   res.render('about.hbs',{
     pageTitle: 'About Page'
   });
-})
+});
+
+app.get('/projects',(req,res) => {
+  res.render('projects.hbs',{
+    pageTitle: 'Projects Page',
+    currentMessage: 'Here are all my Projects'
+  });
+});
 
 app.get('/bad',(req,res) => {
   res.send({
     errorMessage: 'error message'
   });
-})
+});
 
 app.listen(port,() => {
   console.log(`Staring server on port ${port}`);
